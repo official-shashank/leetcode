@@ -5,6 +5,7 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   if (request.nextUrl.pathname === '/') {
+    localStorage.setItem("theme","dark");
     const response = NextResponse.redirect(new URL('/website', request.url));
    
     return response;
