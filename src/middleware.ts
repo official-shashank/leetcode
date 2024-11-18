@@ -5,20 +5,16 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   if (request.nextUrl.pathname === '/') {
-    localStorage.setItem("theme","dark");
+
     const response = NextResponse.redirect(new URL('/website', request.url));
-   
+
+    response.cookies.set('theme', 'dark', { path: '/' });
     return response;
   }
 
   // Continue with the request if not `/website`
   return NextResponse.next();
 }
-
-
-
-
-
 
 // clerk
 const isPublicRoute = createRouteMatcher(['/sign-in(.*)', '/sign-up(.*)',"/website"])

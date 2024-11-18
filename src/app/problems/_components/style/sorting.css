@@ -1,0 +1,110 @@
+.sortingList1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align items to the start */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  overflow-y: hidden; /* Hide vertical overflow */
+  height: auto;
+  gap: 10px;
+  scroll-snap-type: x mandatory; /* Enable smooth snapping */
+  padding: 10px; /* Add padding to avoid hidden content */
+  /* position: relative; */
+  box-sizing: border-box; /* Ensure padding is included in size calculation */
+  scroll-behavior: smooth;
+  margin-bottom: 30px;
+  }
+.scorll{
+position: relative;
+width: 100%;
+}
+.sortingList1 .box {
+  height: 50px;
+  width: auto;
+  padding: 10px 16px;
+  background-color: #303030;
+  border-radius: 50px;
+  text-align: center;
+  flex-shrink: 0; /* Prevent the boxes from shrinking */
+  scroll-snap-align: start; /* Snap each box to the start */
+  font-size: 18px;
+  color: white; /* Ensure text is visible on the dark background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.sortingList1 .scrollBtn {
+  /* position: absolute;
+  right: 0; */
+  position: "absolute";
+  top: "50%";
+  right: "10px";
+  transform: "translateY(-50%)";
+  background-color: "#007bff";
+  color: "white";
+  border: "none";
+  border-radius: "50%";
+  width: "40px";
+  height: "40px";
+  cursor: "pointer";
+}
+
+.sortingList2 {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.sortingList2 select {
+  background-color: #303030;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  height: 40px;
+  min-width: 102;
+}
+.sortingList2 #list {
+  width: 102px;
+}
+.sortingList2 input {
+  background-color: #303030;
+  font-size: 16px;
+  line-height: 20px;
+  border-radius: 10px;
+  padding: 10px;
+  height: 40px;
+}
+.sortingList2 #tags {
+  width: 104px;
+}
+.sortingList2 #setting {
+  width: 60px;
+}
+.sortingList2 select option {
+  margin-top: 10px;
+}
+/* .sortingList2 #difficulty {
+  width: 102px;
+}    */
+.sortingList2 .pickRandom {
+  color: #2cbb58;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-self: center;
+  font-size: large;
+}
+.sortingList2 .text {
+  margin-top: 12px;
+}
+.sortingList2 .circle-symbol {
+  display: inline-block;
+  font-size: 30px; /* Adjust size as needed */
+  width: 50px; /* Adjust to make it round */
+  height: 50px; /* Adjust to make it round */
+  border-radius: 50%; /* Makes it a circle */
+  background-color: #2cbb58; /* Optional background */
+  text-align: center;
+  line-height: 50px; /* Matches the height to center the symbol */
+}

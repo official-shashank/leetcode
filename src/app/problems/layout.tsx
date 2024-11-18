@@ -1,3 +1,5 @@
+"use client"
+
 import NavbarIn from "@/components/components/NavbarIn";
 import React from "react";
 

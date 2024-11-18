@@ -1,0 +1,42 @@
+.heading {
+  display: flex;
+  justify-content: space-between;
+}
+.arrows {
+  display: inline;
+}
+.arrow-left,
+.arrow-right {
+  padding: 5px;
+  gap: 10px;
+  background-color: #1a1a1a;
+}
+.search-input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #1a1a1a;
+    border-radius:10px ;
+}
+
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}   
+.list p{
+    background-color: #1a1a1a;
+    border-radius:50px ;
+    padding: 5px 10px 5px 10px;
+    font-size:14px;
+    font-weight: bold;
+    color: rgb(179, 179, 179);
+    
+}
+.list span{
+background-color: #ffa116;
+font-weight: 500;
+color: #262626;
+padding: 0 6px;
+border-radius:50px ;
+}

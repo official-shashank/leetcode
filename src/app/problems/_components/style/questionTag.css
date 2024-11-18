@@ -1,0 +1,25 @@
+.name-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensures items wrap to the next line */
+    gap: 10px; /* Space between items */
+    /* padding: 10px; */
+    box-sizing: border-box;
+}
+
+.name-item {
+    display: inline-block; /* Keeps items inline and allows wrapping */
+    padding: 5px 10px;
+    border-radius: 5px; /* Rounded corners */
+    margin: 0; /* Reset default margin */
+    white-space: nowrap; /* Prevents text from breaking to the next line */
+}
+
+.noQuestion{
+    background-color :#282828 ;
+    padding: 5px;
+    border-radius: 10px;
+}
+.collapseBtn{
+        background-color: black;
+    color: white;
+}

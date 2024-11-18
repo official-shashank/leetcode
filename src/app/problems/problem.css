@@ -1,0 +1,106 @@
+body {
+    /* background-color: #1a1a1a; */
+}
+
+.top-img {
+    margin: 10px;
+    width: 70%;
+    gap: 1.5rem;
+}
+
+.top-img img {
+    border-radius: 5px;
+}
+.center {
+    display: flex;
+    justify-content: space-between;
+    /* Ensures the items are spaced correctly */
+    align-items: flex-start;
+    /* Aligns items to the top */
+    flex-wrap: nowrap;
+    /* Prevents items from wrapping */
+    margin: 50px 100px;
+    gap: 10px;
+}
+
+.left-side {
+    width: 70%;
+    /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    /* Adjust as needed */
+}
+
+.right-col {
+    flex: 1;
+    
+}
+.calender{
+    
+    height: 300;
+    width: 25%;
+    min-width: 300px;
+    padding: 10px;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #282828;
+    /* background-color: #282828; */
+}
+.tredingCo{
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #282828;
+    width: 25%;
+    min-width: 300px;
+
+}
+.study-plan-head{
+    display: flex;
+    justify-content: space-between  ;
+    align-items: center;
+}
+
+.study-plan-head a{
+    width: 80px;
+    text-decoration: underline;
+    color: blue;
+    font-size: small;
+}
+.study_plan_heading {
+    font-size: 22px;
+    color: rgb(227, 227, 227);
+    font-weight: 500;
+    margin: 10px 0;
+    margin-top: 20px;
+    width: 100%;
+    /* Prevents overflow */
+    display: flex;
+    flex-direction: column;
+}
+.pegination{
+display: flex;
+justify-content: space-between;
+}
+.pegination select{
+    background-color: #303030;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: small;
+}
+
+@media (max-width: 1024px) {
+    .center {
+        flex-direction: column;
+        /* Stacks elements vertically on smaller screens */
+        align-items: center;
+        /* Centers items */
+    }
+
+    .right-col {
+        width: 100%;
+        /* Expands to full width on smaller screens */
+        margin-top: 20px;
+    }
+}
