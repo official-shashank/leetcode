@@ -19,6 +19,7 @@ import {
 import React from "react";
 import { FaHamburger } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
+import { ColorModeButton } from "../ui/color-mode";
 
 const Navbar = () => {
   const { user } = useUser();
@@ -118,6 +119,7 @@ const Navbar = () => {
             </Button>
           </Link>
         )}
+        <ColorModeButton/>
       </HStack>
       <DrawerRoot>
         <DrawerBackdrop />

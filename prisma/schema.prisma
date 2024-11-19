@@ -1,7 +1,7 @@
 // schema.prisma
 
 datasource db {
-  provider = "postgresql" 
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -10,58 +10,55 @@ generator client {
 }
 
 model User {
-  userId      Int          @id @default(autoincrement()) // Primary key
-  username    String       @unique                       // Unique username
-  email       String       @unique                       // Unique email
-  password    String                                    // Hashed password
-  role        Role         @default(USER)               // Role (USER or ADMIN)
-  submissions Submission[]                              // Relation to submissions
-  solutions   Solution[]                                // Relation to solutions
+  userId      String       @id @default(uuid()) // Primary key
+  username    String?      @unique // Unique username
+  email       String       @unique // Unique email
+  role        Role         @default(USER) // Role (USER or ADMIN)
+  submissions Submission[] // Relation to submissions
+  solutions   Solution[] // Relation to solutions
 }
 
 model Problem {
-  problemId    Int          @id @default(autoincrement()) // Primary key
-  title        String                                    // Problem title
-  description  String                                    // Problem description
-  difficulty   Difficulty                                // Problem difficulty (enum)
-  tags         String[]                                  // Tags for categorization
-  submissions  Submission[]                              // Relation to submissions
-  tests        Test[]                                    // Relation to test cases
-  solutions    Solution[]                                // Relation to solutions
+  problemId   String       @id @default(uuid()) // Primary key
+  title       String       @unique // Problem title
+  description String // Problem description
+  difficulty  Difficulty // Problem difficulty (enum)
+  tags        String[] // Tags for categorization
+  submissions Submission[] // Relation to submissions
+  tests       String[] // Relation to test cases
+  solutions   Solution[] // Relation to solutions
+  Test        Test[]
 }
 
-
-
-
 model Test {
-  testId       Int          @id @default(autoincrement()) // Primary key
-  input        String                                     // Test input
-  expectedOutput String                                   // Expected output
-  isPublic     Boolean      @default(false)               // Whether the test is public or private
-  problem      Problem      @relation(fields: [problemId], references: [problemId])
-  problemId    Int
+  testId         String   @id @default(uuid()) // Primary key
+  input          String // Test input
+  expectedOutput String // Expected output
+  isPublic       Boolean  @default(false) // Whether the test is public or private
+  problem        Problem? @relation(fields: [problemId], references: [problemId])
+  problemId      String?
 }
 
 model Submission {
-  submissionId Int          @id @default(autoincrement()) // Primary key
-  code         String                                     // Code submitted by the user
-  language     String                                     // Programming language used
-  status       Status                                     // Status of the submission
-  user         User        @relation(fields: [userId], references: [userId])
-  userId       Int
-  problem      Problem     @relation(fields: [problemId], references: [problemId])
-  problemId    Int
-  createdAt    DateTime    @default(now())                // Timestamp for the submission
+  submissionId String   @id @default(uuid()) // Primary key
+  code         String // Code submitted by the user
+  language     String // Programming language used
+  status       Status // Status of the submission
+  user         User     @relation(fields: [userId], references: [userId])
+  userId       String
+  problem      Problem  @relation(fields: [problemId], references: [problemId])
+  problemId    String
+  createdAt    DateTime @default(now()) // Timestamp for the submission
 }
 
 model Solution {
-  solutionId   Int          @id @default(autoincrement()) // Primary key
-  code         String                                     // Final accepted code
-  user         User        @relation(fields: [userId], references: [userId])
-  userId       Int
-  problem      Problem     @relation(fields: [problemId], references: [problemId])
-  problemId    Int
-  createdAt    DateTime    @default(now())                // Timestamp for the accepted solution
+  solutionId Int      @id @default(autoincrement()) // Primary key
+  code       String // Final accepted code
+  user       User     @relation(fields: [userId], references: [userId])
+  userId     String
+  problem    Problem  @relation(fields: [problemId], references: [problemId])
+  problemId  String
+  createdAt  DateTime @default(now()) // Timestamp for the accepted solution
 }
 
 // Enum definitions
