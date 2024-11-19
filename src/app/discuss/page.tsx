@@ -1,14 +1,13 @@
-
-import NavbarIn from '@/components/components/NavbarIn'
-import React from 'react'
+import NavbarIn from "@/components/components/NavbarIn";
+import React from "react";
 
 const page = () => {
   return (
     <>
-    <NavbarIn/>
-    <div>discuss</div>
+      <NavbarIn />
+      <div>discuss</div>
     </>
-  )
-}
+  );
+};
 
-export default page
+export default page;
